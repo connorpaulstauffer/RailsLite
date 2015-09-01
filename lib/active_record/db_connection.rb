@@ -1,14 +1,8 @@
 require 'sqlite3'
-require 'byebug'
 
-# https://tomafro.net/2010/01/tip-relative-paths-with-file-expand-path
-# ROOT_FOLDER = File.join(File.dirname(__FILE__), '..')
-# CATS_SQL_FILE = File.join(ROOT_FOLDER, 'cats.sql')
-# CATS_DB_FILE = File.join(ROOT_FOLDER, 'cats.db')
 ROOT_FOLDER = "./"
 CATS_SQL_FILE = "./cats.sql"
 CATS_DB_FILE = "./cats.db"
-# byebug
 
 class DBConnection
   def self.open(db_file_name)

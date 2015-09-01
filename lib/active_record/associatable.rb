@@ -32,7 +32,6 @@ class HasManyOptions < AssocOptions
 end
 
 module Associatable
-  # Phase IIIb
   def belongs_to(name, options_hash = {})
     options = BelongsToOptions.new(name, options_hash)
     assoc_options[name] = options

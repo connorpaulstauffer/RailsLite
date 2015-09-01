@@ -1,5 +1,6 @@
 require 'json'
 require 'webrick'
+require 'byebug'
 
 class Flash
     def initialize(req)
@@ -14,7 +15,7 @@ class Flash
 
     def [](mark)
       raise if now?
-      all_values = @values.merge(@now_values)
+      all_values = @now_values ? @values.merge(@now_values) : @values
       all_values[mark.to_s] || all_values[mark.to_sym]
     end
 

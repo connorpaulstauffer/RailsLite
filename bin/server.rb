@@ -8,32 +8,6 @@ require_relative '../lib/active_record/sql_object'
 require_relative '../lib/active_record/searchable'
 require_relative '../lib/active_record/associatable'
 require_relative '../lib/active_record/db_connection'
-require 'byebug'
-
-
-# class Cat
-#   attr_reader :name, :owner
-#
-#   def self.all
-#     @cat ||= []
-#   end
-#
-#   def initialize(params = {})
-#     params ||= {}
-#     @name, @owner = params["name"], params["owner"]
-#   end
-#
-#   def save
-#     return false unless @name.present? && @owner.present?
-#
-#     Cat.all << self
-#     true
-#   end
-#
-#   def inspect
-#     { name: name, owner: owner }.inspect
-#   end
-# end
 
 class Cat < SQLObject
   belongs_to :owner, class_name: :Human
@@ -59,15 +33,6 @@ class CatsController < Controller
     @cats = Cat.all
     render :index
   end
-
-  # def show
-  #   a = params["id"]
-  #   a = a.to_i
-  #   @cat = Cat.find(a)
-  #   byebug
-  #   # @cat = Cat.find(params[:id])
-  #   render :show
-  # end
 
   def new
     @cat = Cat.new

@@ -72,16 +72,17 @@ class Controller
         return @form_authenticity_token = cookie.value
       end
     end
-    generate_auth_token
+    save_authenticity_token
   end
 
   def save_authenticity_token
     @form_authenticity_token = generate_auth_token
     cookie = WEBrick::Cookie.new(
-                                 '_rails_lite_auth',
-                                 @form_authenticity_token.to_json
-                                )
+      '_rails_lite_auth',
+      @form_authenticity_token.to_json
+    )
     res.cookies << cookie
+    @form_authenticity_token
   end
 
   def generate_auth_token
