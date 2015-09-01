@@ -31,7 +31,6 @@ with an ORM inspired by ActiveRecord.
  [params]: ./lib/params.rb
  [router]: ./lib/router.rb
  [session]: ./lib/session.rb
- [views]: ./views
 
 
 ## Instructions
@@ -39,8 +38,9 @@ To run RailsLite, clone this repository into a local directory. ```cd``` into
 the directory. Run ```bundle install```. Start the server with
 ```ruby bin/server.rb``` and navigate to localhost:3000/cats in your browser.
 
-To customize the application, alter the sql script in [cats.sql][sql], or the
+To customize the application, alter the sql script in [cats.sql][sql], the [views][views], or the
 models or controllers in [server.rb][server].
 
 [sql]: ./cats.sql
 [server]: ./bin/server.rb
+[views]: ./views
