@@ -31,6 +31,7 @@ with an ORM inspired by ActiveRecord.
  [params]: ./lib/params.rb
  [router]: ./lib/router.rb
  [session]: ./lib/session.rb
+ [views]: ./views
 
 
 ## Instructions
